@@ -49,25 +49,41 @@ mean = [average(negative), average(positive)]
 var = [variance(negative), variance(positive)]
 dev = [math.sqrt(var[0]), math.sqrt(var[1])]
 
-print(mean)
-print(var)
-print(dev)
+# print(mean)
+# print(var)
+# print(dev)
+
+g = (mean[0] + mean[1]) / 2
+
 
 print("Enter an example value to test: ")
 instance = float(input())
 
-g = []
-g.append(0 - 0.5 * math.log(2 * math.pi) - math.log(dev[0]) - math.pow(instance - mean[0], 2) / (2 * math.pow(var[0], 2)))
-g.append(0 - 0.5 * math.log(2 * math.pi) - math.log(dev[1]) - math.pow(instance - mean[1], 2) / (2 * math.pow(var[1], 2)))
-
-print("g[0] = " + str(g[0]))
-print("g[1] = " + str(g[1]))
-
-
-if g[0] < g[1]:
-	print("Class is 0")
+if(mean[0] < mean[1]):
+	if(instance < g):
+		print("Class is 0")
+	else:
+		print("Class is 1")
 else:
-	print("Class is 1")
+	if(instance < g):
+		print("Class is 1")
+	else:
+		print("Class is 0")
+
+
+# g = []
+# g.append(0 - 0.5 * math.log(2 * math.pi) - math.log(dev[0]) - math.pow(instance - mean[0], 2) / (2 * math.pow(var[0], 2)))
+# g.append(0 - 0.5 * math.log(2 * math.pi) - math.log(dev[1]) - math.pow(instance - mean[1], 2) / (2 * math.pow(var[1], 2)))
+
+
+# print("g[0] = " + str(g[0]))
+# print("g[1] = " + str(g[1]))
+
+
+# if g[0] < g[1]:
+# 	print("Class is 0")
+# else:
+# 	print("Class is 1")
 
 
 
