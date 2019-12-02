@@ -54,7 +54,7 @@ dev = [math.sqrt(var[0]), math.sqrt(var[1])]
 # print(dev)
 
 g = (mean[0] + mean[1]) / 2
-
+print("Discriminant value is: " + str(round(g, 2)))
 
 print("Enter an example value to test: ")
 instance = float(input())
